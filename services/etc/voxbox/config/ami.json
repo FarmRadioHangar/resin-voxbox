@@ -1,0 +1,14 @@
+{
+  "port": "5038",
+  "host": "127.0.0.1",
+  "username": "admin",
+  "password": "amp111",
+  "country_prefix": "+255",
+  "country_digits": "12",
+  "networks": {
+    "airtel": "^0[67]8[0-9]{7}$",
+    "vodacom": "^0[67]5[0-9]{7}$",
+    "tigo": "",
+    "halotel": ""
+  }
+}

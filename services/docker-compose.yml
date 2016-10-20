@@ -1,0 +1,37 @@
+version: '2'
+
+services:
+    asterisk:
+      image: gernest/resin-asterisk
+      network_mode: "host"
+      privileged: true
+      restart: always
+      command: asterisk -f
+      ports:
+        - 5060:5060
+      volumes:
+        - /data/asterisk/log:/var/log/asterisk
+        - ./etc/asterisk:/etc/asterisk
+        - /dev:/dev
+    static:
+      image: gernest/voxbox-ui
+      privileged: true
+      network_mode: "host"
+      restart: always
+      ports:
+        - 80:80
+    backend:
+      image: gernest/voxbox-backend
+      privileged: true
+      network_mode: "host"
+      restart: always
+      ports:
+        - 19998:19998
+      command: /bin/bash -c "redis-server --daemonize yes &&./sh/reload_server.sh"
+      volumes:
+        - /data/redis:/var/lib/redis
+        - ./etc/voxbox/config:/usr/src/app/config
+        - ./etc/voxbox/state:/usr/src/app/state
+      depends_on:
+        - asterisk
+

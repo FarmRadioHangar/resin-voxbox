@@ -1,0 +1,42 @@
+{
+  "dongles": {
+    "airtel1": {
+			"number": "+255683700200",
+      "network": "airtel",
+      "sms": "any"
+    },
+    "airtel2": {
+      "number": "+255689514544",
+      "network": "airtel",
+      "sms": "disable"
+    },
+    "tigo1": {
+      "number": "+255718885887",
+      "network": "tigo",
+      "sms": "own"
+    },
+    "vodacom1": {
+      "number": "+255754885885",
+      "network": "vodacom",
+      "sms": "any"
+    }
+  },
+  "host": true,
+  "console": {
+    "in": true,
+    "out": true
+  },
+  "operators": ["701", "702", "703", "705", "707"],
+  "extensions": ["706", "704"],
+  "virtual": {
+    "master": "2663",
+    "host": "194",
+    "ivr": "191",
+    "on_hold": "196",
+    "free": "SIP/197",
+    "ring": "198",
+    "parking": "70",
+    "parked": "71"
+  },
+  "defaultSMS": "airtel1"
+}

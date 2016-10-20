@@ -1,0 +1,17 @@
+[SQLITE3ASTERIDEX]
+dsn=SQLite3-asteridex
+read=SELECT `name`, `out` FROM `user1` WHERE `dialcode`='${SQL_ESC(${ARG1})}'
+
+[TIMECLOCK]
+dsn=MySQL-timeclock
+read=SELECT `comments` FROM `users` WHERE `empnum`='${SQL_ESC(${ARG1})}'
+write=UPDATE `users` SET `empnum`='${SQL_ESC(${VAL1})}' WHERE `empnum`='${SQL_ESC(${ARG1})}'
+
+[ASTERIDEX]
+dsn=MySQL-asteridex
+read=SELECT `name`, `out` FROM `user1` WHERE `dialcode`='${SQL_ESC(${ARG1})}'
+
+[TRAVMAN4]
+dsn=MySQL-TravMan4
+read=SELECT `acctno`, `pin`, `permissions` FROM `Accounts` WHERE `acctno`='${SQL_ESC(${ARG1})}'
+
